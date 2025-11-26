@@ -161,6 +161,67 @@
             background: #219a52;
         }
 
+        /* About Section */
+        .about-section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+	.about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            padding: 3rem;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            color: #3498db;
+        }
+
+        .feature-text h4 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .about-image {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
         /* Footer */
         footer {
             background: #2c3e50;
@@ -231,6 +292,51 @@
                     <div class="car-price">1500 грн/день</div>
                     <button class="rent-button" onclick="rentCar('Bugatti')">Орендувати</button>
                 </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Про нас</h2>
+                <p>AutoRent - це сучасна компанія з оренди автомобілів, яка працює на ринку вже понад 10 років. Ми пропонуємо широкий вибір якісних автомобілів для будь-яких потреб наших клієнтів.</p>
+                <p>Наша місія - забезпечити вас комфортним та надіжним транспортом за доступними цінами. Ми прагнемо до того, щоб кожна ваша подорож була безпечною та приємною.</p>
+                
+                <div class="about-features">
+                    <div class="feature">
+                        <div class="feature-icon">✓</div>
+                        <div class="feature-text">
+                            <h4>Якісні авто</h4>
+                            <p>Регулярне технічне обслуговування</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">✓</div>
+                        <div class="feature-text">
+                            <h4>Доступні ціни</h4>
+                            <p>Конкурентні тарифи та акції</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">✓</div>
+                        <div class="feature-text">
+                            <h4>Цілодобова підтримка</h4>
+                            <p>Допомога на дорозі 24/7</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">✓</div>
+                        <div class="feature-text">
+                            <h4>Гнучкі умови</h4>
+                            <p>Оренда від 1 дня до декількох місяців</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image">
+                <img src="images/team_member.jpg" alt="Наша команда" style="width:100%; border-radius:10px;">
             </div>
         </div>
     </section>
