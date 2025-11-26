@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Автопрокат | Оренда авто</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #f39c12;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+        }
+
+        .hero-content {
+            background: rgba(0,0,0,0.6);
+            padding: 3rem;
+            border-radius: 10px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            background: #e74c3c;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 1rem;
+        }
+
+        .cta-button:hover {
+            background: #c0392b;
+        }
+
+        /* Cars Section */
+        .cars-section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: #2c3e50;
+        }
+
+        .cars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .car-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .car-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .car-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .car-info {
+            padding: 1.5rem;
+        }
+
+        .car-price {
+            color: #e74c3c;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0.5rem 0;
+        }
+
+        .rent-button {
+            background: #27ae60;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .rent-button:hover {
+            background: #219a52;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">🚗 AutoRent</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Головна</a></li>
+                    <li><a href="#cars">Автомобілі</a></li>
+                    <li><a href="#about">Про нас</a></li>
+                    <li><a href="#contact">Контакти</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Оренда авто на будь-який смак</h1>
+            <p>Знайдіть ідеальний автомобіль для вашої подорожі</p>
+            <button class="cta-button" onclick="scrollToCars()">Переглянути авто</button>
+        </div>
+    </section>
+
+    <!-- Cars Section -->
+    <section class="cars-section" id="cars">
+        <h2 class="section-title">Наш автопарк</h2>
+        <div class="cars-grid">
+            <!-- Car 1 -->
+            <div class="car-card">
+                <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3" alt="Toyota Camry" class="car-image">
+                <div class="car-info">
+                    <h3>Toyota Camry</h3>
+                    <p>Комфортний седан для міста</p>
+                    <div class="car-price">900 грн/день</div>
+                    <button class="rent-button" onclick="rentCar('Toyota Camry')">Орендувати</button>
+                </div>
+            </div>
+
+            <!-- Car 2 -->
+            <div class="car-card">
+                <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3" alt="Volkswagen Golf" class="car-image">
+                <div class="car-info">
+                    <h3>Volkswagen Golf</h3>
+                    <p>Економний хетчбек</p>
+                    <div class="car-price">700 грн/день</div>
+                    <button class="rent-button" onclick="rentCar('Volkswagen Golf')">Орендувати</button>
+                </div>
+            </div>
+
+            <!-- Car 3 -->
+            <div class="car-card">
+                <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?ixlib=rb-4.0.3" alt="BMW X5" class="car-image">
+                <div class="car-info">
+                    <h3>BMW X5</h3>
+                    <p>Преміум позашляховик</p>
+                    <div class="car-price">1500 грн/день</div>
+                    <button class="rent-button" onclick="rentCar('BMW X5')">Орендувати</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 AutoRent. Всі права захищені.</p>
+        <p>Контакти: +380 (XX) XXX-XX-XX | info@autorent.ua</p>
+    </footer>
+
+    <script>
+        function scrollToCars() {
+            document.getElementById('cars').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+
+        function rentCar(carName) {
+            alert(`Дякуємо за вибір! Ви обрали: ${carName}\nНаш менеджер зв'яжеться з вами найближчим часом.`);
+            // Тут можна додати більше функціоналу для бронювання
+        }
+
+        // Додаємо фіксований header при скролі
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(44, 62, 80, 0.95)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #2c3e50, #3498db)';
+            }
+        });
+    </script>
+</body>
+</html>
